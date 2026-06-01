@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AgriGrow Onboarding</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;family=Work+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#c5c2c2",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#2d5a27",
+                        "on-surface-variant": "#42493e",
+                        "tertiary": "#3a3939",
+                        "secondary-container": "#e1e1c9",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container-low": "#f3f3f3",
+                        "primary-fixed-dim": "#a1d494",
+                        "on-secondary-container": "#636451",
+                        "inverse-surface": "#2f3131",
+                        "tertiary-container": "#515050",
+                        "surface-bright": "#f9f9f9",
+                        "secondary": "#5e604d",
+                        "surface-variant": "#e2e2e2",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#002201",
+                        "outline-variant": "#c2c9bb",
+                        "tertiary-fixed": "#e5e2e1",
+                        "surface-dim": "#dadada",
+                        "surface-container-high": "#e8e8e8",
+                        "on-primary-fixed-variant": "#23501e",
+                        "on-background": "#1a1c1c",
+                        "outline": "#72796e",
+                        "on-primary-container": "#9dd090",
+                        "primary": "#154212",
+                        "surface-tint": "#3b6934",
+                        "secondary-fixed-dim": "#c8c8b0",
+                        "inverse-primary": "#a1d494",
+                        "on-error-container": "#93000a",
+                        "surface": "#f9f9f9",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "surface-container": "#eeeeee",
+                        "primary-fixed": "#bcf0ae",
+                        "on-secondary-fixed-variant": "#474836",
+                        "secondary-fixed": "#e4e4cc",
+                        "on-secondary-fixed": "#1b1d0e",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "background": "#f9f9f9",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#c8c6c5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "stack-md": "16px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "gutter": "16px",
+                        "stack-lg": "24px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Work Sans"],
+                        "label-sm": ["Work Sans"],
+                        "body-md": ["Work Sans"],
+                        "headline-md": ["Be Vietnam Pro"],
+                        "display-lg": ["Be Vietnam Pro"],
+                        "headline-lg": ["Be Vietnam Pro"],
+                        "headline-lg-mobile": ["Be Vietnam Pro"],
+                        "body-lg": ["Work Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .carousel-item {
+            min-width: 100%;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-dot {
+            width: 24px;
+            background-color: #154212;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface overflow-hidden">
+<!-- Top App Bar (From JSON) -->
+<header class="fixed top-0 left-0 w-full z-40 bg-surface border-b border-outline-variant h-16 flex justify-between items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="agriculture">agriculture</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">AgriGrow</span>
+</div>
+<div class="flex items-center">
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Onboarding Content -->
+<main class="relative h-screen w-full flex flex-col justify-center">
+<!-- Carousel Track -->
+<div class="carousel-track h-full" id="carousel-track">
+<!-- Step 1: Rent or Buy -->
+<section class="carousel-item relative flex flex-col items-center justify-end h-full pt-16">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A high-quality cinematic photograph of a modern green tractor driving through a lush, vibrant maize field in sub-Saharan Africa during golden hour. The lighting is warm and golden, highlighting the textures of the soil and the crops. The style is professional and clean, using a natural earthy green and soft beige color palette to convey reliability and growth in a modern agricultural setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp-mXCw3Ji79WuWmWh8gL5cYOzqTEkEsZCEYEOuu4_zp2D_FvilftqTzOzY-pFWKqE0bEmuvgsu9vy3bVA3HjZOnEmIAzRorZIvDnEuWQop5s8Dfnz8uj2CsDn78bxpVLXxjJaAHOyrkJNoBwbF7xpcX7oTtzkaqec6Ha-W4asNxMX8Val6BTBE48cEMRkh05oKnfCGOX07MlV7sJ9HEx7p4zOAn5lvtJ3vEGttgF7kiKklcVkiwlbCyDiLIF5B76_n1JF9MiWeRe5"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-32 text-center md:text-left">
+<div class="bg-surface/80 backdrop-blur-md p-stack-lg rounded-xl border border-outline-variant max-w-xl">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-stack-sm">Rent or buy equipment easily.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Access high-quality tractors, irrigation tools, and harvesting machinery at the best local rates.</p>
+</div>
+</div>
+</section>
+<!-- Step 2: Verified Sellers -->
+<section class="carousel-item relative flex flex-col items-center justify-end h-full pt-16">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A wide-angle landscape shot of a group of diverse African farmers engaged in a community meeting at the edge of a flourishing vegetable farm. The atmosphere is bright and collaborative, with high-key natural daylight enhancing the deep greens of the vegetation and the warm beige of the earth. The aesthetic is corporate yet warm, emphasizing trust, verification, and community-driven agritech solutions." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEjCXQrLeIabx8IOmniAu2Zbu2I1gCknJZk0W2F0qnRj1twkkLRTnoEFc4q4xB4ibDCpW4c1K0lluxqIzojX4n_R5dODiLcGETt7cR0MnPbOfjecL8nC41gjEVKGVBZ4-H2Q4vrysCJQDj5uwYjFyWYALnhRdRiHAMmli7tRNLyS7kA5bjejQSOh8Js1snYzRfforwmf-l_pTcJPIXORtlp5ZuxX0_JmGhjGh7UP89Rp58-P7V6YrXa27HovJQ9PI_ZRhZ6B2kIyzx"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-32 text-center md:text-left">
+<div class="bg-surface/80 backdrop-blur-md p-stack-lg rounded-xl border border-outline-variant max-w-xl">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-stack-sm">Connect with verified sellers in your region.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Build trust within a community of pre-vetted agricultural providers and local distributors.</p>
+</div>
+</div>
+</section>
+<!-- Step 3: Secure Payments -->
+<section class="carousel-item relative flex flex-col items-center justify-end h-full pt-16">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A close-up photograph of a person's hands holding a modern smartphone over a rustic wooden table at an outdoor market. The screen displays a clean, minimalist mobile money transaction interface with Earthy Green accents. The background is softly blurred, showing colorful produce. The mood is secure, efficient, and technologically advanced, blending traditional commerce with fintech reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy4JyQl2NIS_BpfTObeK8m-56lhzocU-uIM4qLvb8L-Y_uNCoRgGzm93FQezJW8r9qcPFFPlvbWU4kj13oLoZg921OHLXsskLYZAgyQQI0lbK2huzGwMtdb0e2wI9U7eUpaQhU52xpcngrHt0vnSWc2eMgyDaqfb-clNaGdNswVzPChDSZFEZgJEUK9fkvCroZhmfwzoSDVSZixkdEve9whHgCzurHkdfBBC3cXKVbag1NCLC_yVc5WPdib90RnuLtzf2_UK1UpB5V"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-32 text-center md:text-left">
+<div class="bg-surface/80 backdrop-blur-md p-stack-lg rounded-xl border border-outline-variant max-w-xl">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-stack-sm">Secure mobile money payments.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Complete your transactions safely with integrated Airtel, MTN, and MPesa payment gateways.</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Carousel Navigation & UI -->
+<div class="absolute bottom-0 left-0 w-full z-30 pb-margin-mobile md:pb-margin-desktop">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col gap-6">
+<!-- Progress Indicators -->
+<div class="flex justify-center md:justify-start gap-2">
+<div class="h-2 w-2 rounded-full bg-outline-variant transition-all duration-300 active-dot" id="dot-0"></div>
+<div class="h-2 w-2 rounded-full bg-outline-variant transition-all duration-300" id="dot-1"></div>
+<div class="h-2 w-2 rounded-full bg-outline-variant transition-all duration-300" id="dot-2"></div>
+</div>
+<!-- Action Bar -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="hidden md:block">
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" id="skip-btn">Skip Tour</button>
+</div>
+<div class="flex w-full md:w-auto gap-4">
+<button class="hidden flex-1 md:flex-none items-center justify-center h-14 px-8 rounded-lg border border-primary text-primary font-label-md text-label-md hover:bg-secondary-container transition-colors" id="prev-btn">
+                            Back
+                        </button>
+<button class="flex-1 md:flex-none flex items-center justify-center bg-primary text-on-primary h-14 px-8 md:px-12 rounded-lg font-label-md text-label-md shadow-md active:scale-95 transition-all" id="next-btn">
+                            Next
+                        </button>
+<button class="hidden flex-1 md:flex-none flex items-center justify-center bg-primary text-on-primary h-14 px-8 md:px-12 rounded-lg font-label-md text-label-md shadow-md active:scale-95 transition-all" id="get-started-btn">
+                            Get Started
+                        </button>
+</div>
+<div class="md:hidden">
+<button class="font-label-md text-label-md text-on-surface-variant" id="skip-btn-mobile">Skip Tour</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer - Hidden on Onboarding as per Shell visibility rules (linear flow) -->
+<script>
+        const track = document.getElementById('carousel-track');
+        const nextBtn = document.getElementById('next-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        const getStartedBtn = document.getElementById('get-started-btn');
+        const dots = [
+            document.getElementById('dot-0'),
+            document.getElementById('dot-1'),
+            document.getElementById('dot-2')
+        ];
+
+        let currentIndex = 0;
+        const totalSlides = 3;
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.add('active-dot');
+                    dot.classList.add('w-6');
+                    dot.classList.remove('w-2');
+                } else {
+                    dot.classList.remove('active-dot');
+                    dot.classList.remove('w-6');
+                    dot.classList.add('w-2');
+                }
+            });
+
+            // Update buttons
+            if (currentIndex === 0) {
+                prevBtn.classList.add('hidden');
+                nextBtn.classList.remove('hidden');
+                getStartedBtn.classList.add('hidden');
+            } else if (currentIndex === totalSlides - 1) {
+                prevBtn.classList.remove('hidden');
+                nextBtn.classList.add('hidden');
+                getStartedBtn.classList.remove('hidden');
+            } else {
+                prevBtn.classList.remove('hidden');
+                nextBtn.classList.remove('hidden');
+                getStartedBtn.classList.add('hidden');
+            }
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < totalSlides - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+
+        // Initialize
+        updateCarousel();
+
+        // Optional: Auto-slide logic
+        /*
+        let autoSlide = setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        }, 5000);
+        */
+
+        // Interactions for the "Get Started" button
+        getStartedBtn.addEventListener('click', () => {
+            getStartedBtn.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="progress_activity">progress_activity</span>';
+            setTimeout(() => {
+                window.location.reload(); // Simulate navigation
+            }, 1000);
+        });
+    </script>
+</body></html>

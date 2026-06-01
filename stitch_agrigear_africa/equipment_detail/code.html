@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#1b1b1b",
+                    "secondary-fixed-dim": "#c8c8b0",
+                    "on-surface-variant": "#42493e",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#a1d494",
+                    "primary-container": "#2d5a27",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#e5e2e1",
+                    "secondary-fixed": "#e4e4cc",
+                    "on-secondary-fixed-variant": "#474836",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#f9f9f9",
+                    "on-background": "#1a1c1c",
+                    "tertiary": "#3a3939",
+                    "surface-container-high": "#e8e8e8",
+                    "outline-variant": "#c2c9bb",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#e2e2e2",
+                    "surface-container-highest": "#e2e2e2",
+                    "inverse-surface": "#2f3131",
+                    "on-secondary-fixed": "#1b1d0e",
+                    "on-primary-fixed-variant": "#23501e",
+                    "secondary-container": "#e1e1c9",
+                    "on-surface": "#1a1c1c",
+                    "primary-fixed-dim": "#a1d494",
+                    "surface-tint": "#3b6934",
+                    "surface-container": "#eeeeee",
+                    "surface": "#f9f9f9",
+                    "on-primary-container": "#9dd090",
+                    "on-tertiary-container": "#c5c2c2",
+                    "surface-container-low": "#f3f3f3",
+                    "on-primary": "#ffffff",
+                    "background": "#f9f9f9",
+                    "inverse-on-surface": "#f0f1f1",
+                    "outline": "#72796e",
+                    "on-secondary-container": "#636451",
+                    "tertiary-container": "#515050",
+                    "secondary": "#5e604d",
+                    "primary-fixed": "#bcf0ae",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#dadada",
+                    "primary": "#154212",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "on-primary-fixed": "#002201"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "16px",
+                    "margin-mobile": "16px",
+                    "unit": "8px",
+                    "container-max": "1280px",
+                    "margin-desktop": "32px",
+                    "gutter": "16px",
+                    "stack-sm": "8px",
+                    "stack-lg": "24px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Work Sans"],
+                    "display-lg": ["Be Vietnam Pro"],
+                    "label-md": ["Work Sans"],
+                    "headline-lg-mobile": ["Be Vietnam Pro"],
+                    "headline-lg": ["Be Vietnam Pro"],
+                    "body-md": ["Work Sans"],
+                    "body-lg": ["Work Sans"],
+                    "headline-md": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #FAFAFA;
+            color: #1A1C1C;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .custom-shadow {
+            box-shadow: 0px 4px 12px rgba(28, 28, 28, 0.05);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md">
+<!-- Top AppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface dark:bg-on-background border-b border-outline-variant dark:border-outline h-16 flex items-center px-margin-mobile md:px-margin-desktop justify-between max-w-container-max mx-auto">
+<div class="flex items-center gap-stack-sm">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low transition-colors p-2 rounded-full">arrow_back</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">John Deere 5075E</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary p-2">share</button>
+<button class="material-symbols-outlined text-primary p-2">favorite</button>
+</div>
+</header>
+<main class="pt-16 pb-24 max-w-container-max mx-auto px-margin-mobile">
+<!-- Gallery Section -->
+<section class="mt-stack-md">
+<div class="relative w-full aspect-video rounded-xl overflow-hidden group">
+<img alt="John Deere 5075E" class="w-full h-full object-cover" data-alt="A professional high-resolution photograph of a John Deere 5075E 4WD tractor standing in a lush green Nigerian field during the golden hour. The tractor is painted in iconic vibrant green and yellow, reflecting the soft sunlight of the African savanna. The setting is clean and modern, highlighting the machinery's robust build and pristine condition. The overall mood is reliable and industrious, emphasizing high-end agricultural technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXpYHf-sP7qnri7uSCQXkmAWdQSOPTRQQRCD0e2JIuvLSpVUQOHgponU0UwGuYE0tVdZ5W1AKJmyLjdFDUkHamwBMGGsOWpdDuo3UbOlQCdtBB5kqQcp1eZ0xH-gcsTbXCwW_rRxG8odbtmEzbTwU1JDs9b7IpqYtriqI2z0Ms7TDCmb-eXXuoLJrgZwZtjg0P8i5WMzfiZZ_H4r0Q1GBVD3GuniiVpDkCo5dcdpUt6IEhMT8_0eZHUFMzisFH0z-JPZlGa40ACf4C"/>
+<div class="absolute bottom-4 right-4 bg-on-background/60 text-white px-3 py-1 rounded-full text-label-sm font-label-sm backdrop-blur-sm">
+                    1 / 8
+                </div>
+</div>
+<div class="flex gap-2 mt-4 overflow-x-auto no-scrollbar pb-2">
+<div class="min-w-[80px] h-20 rounded-lg overflow-hidden border-2 border-primary">
+<img class="w-full h-full object-cover" data-alt="A close-up side view of a John Deere 5075E tractor, emphasizing its powerful engine and sturdy 4WD tires. The lighting is crisp and natural, showcasing the high-contrast green and yellow paint under a bright morning sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiJOgpBAp188OGpbSXcnoCyhHmdhgQ86XJ2hVUvCNjeHr_do5ipNlZGwjiUZmVAn5AGUd5M7zhbwePbcSrWWifTdmA0PBQYOAusdqRGFgx-aK9WaiP9b5_O8PenSteRkR0qkkaBcvGjK8RCzBGGWJ29_BBxErQU7F9NB-pQmaJXrHRwulzt4KHon7O4RgFn92bv00hXyQ8ry6RcH6zT-E2n4jNVAY3-F0PRhGf5jup_6HZptBj9M-k6NuPO2UtdHlHEXLvm84v2Rp0"/>
+</div>
+<div class="min-w-[80px] h-20 rounded-lg overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="The driver's cockpit of a modern John Deere tractor, showing the ergonomic seat and clean dashboard controls. The atmosphere is professional and tech-forward, with clear digital displays and tactile levers designed for efficiency and comfort." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRbf-aELUi49pTVBz5cey-5B_aGpe0CIykDcytuJwmJ-gNApirz7if8mjzPpLUDCmpp9l6zGbgzIRioL21_V6w1D-twygrkgFSyJtqDDfbkYnYUNv9G1v9-59XN7b504MB-pWVxZSBGBM2DJFO2NuEGlSM1nqEgVCCssXU2DTXXrnEsqUg0TDgWEdnLzZ5dBD0wJseNI6eMolwteOGHxpJ3IzPYqG-Hi1bFsYMnOJR9Iqm9atOD2oF_2dZBz45NJcnB-3dWsgDCKrX"/>
+</div>
+<div class="min-w-[80px] h-20 rounded-lg overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A detailed shot of the heavy-duty rear hitch and power take-off (PTO) system of a John Deere tractor. The scene is bright and clear, highlighting the mechanical strength and ready-to-work status of the equipment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7kM599Oz-UelynhcD5PlL5SsoTMdZqEMbrnHJkd6IZBBtBj2D7d06RcdIOe2gLfI2s64pG4S7lFmOxiOMqx9HmCuvr-5Sk0xIJOGd3bdS4hs1P85xiPCivaQz4zFWvjZMBLFFhS9wgXkqg_pQEjQQv_isvh0o9rrDRPo2uQwUv-lXFix8bGCFQYuzymW-BD_xCCj3uX539zvQPRY63rh2hrhaAjUSkFIIF3uWRakorZIakkNcHashTjVZ5NKbX9IfIL_0_rH0M7y1"/>
+</div>
+<div class="min-w-[80px] h-20 rounded-lg overflow-hidden border border-outline-variant flex items-center justify-center bg-surface-container">
+<span class="font-label-md text-label-md text-on-surface-variant">+5 More</span>
+</div>
+</div>
+</section>
+<!-- Product Identity -->
+<section class="mt-stack-lg">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-on-surface">John Deere 5075E 4WD</h2>
+<p class="text-on-surface-variant font-body-md mt-1">Multi-purpose Utility Tractor</p>
+</div>
+<div class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md">4.9 (24)</span>
+</div>
+</div>
+<!-- Pricing Grid -->
+<div class="grid grid-cols-2 gap-stack-md mt-stack-md">
+<div class="p-stack-md bg-white border border-outline-variant rounded-xl custom-shadow">
+<p class="text-label-sm font-label-sm text-on-surface-variant">Daily Rental</p>
+<p class="font-headline-md text-headline-md font-bold text-primary mt-1">₦45k<span class="text-label-md font-label-md text-on-surface-variant"> /day</span></p>
+</div>
+<div class="p-stack-md bg-white border border-outline-variant rounded-xl custom-shadow">
+<p class="text-label-sm font-label-sm text-on-surface-variant">Purchase Price</p>
+<p class="font-headline-md text-headline-md font-bold text-primary mt-1">₦18.5M</p>
+</div>
+</div>
+</section>
+<!-- Specifications Bento Grid -->
+<section class="mt-stack-lg">
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface mb-stack-md">Specifications</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-primary">bolt</span>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Horsepower</p>
+<p class="font-label-md text-label-md font-bold">75 HP</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-primary">event_available</span>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Year</p>
+<p class="font-label-md text-label-md font-bold">2022 Model</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-primary">new_releases</span>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Condition</p>
+<p class="font-label-md text-label-md font-bold">Like New</p>
+</div>
+</div>
+<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-primary">settings_input_component</span>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Transmission</p>
+<p class="font-label-md text-label-md font-bold">9F/3R SyncShuttle</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Seller Profile -->
+<section class="mt-stack-lg p-stack-md bg-secondary-container/30 border border-secondary-container rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-stack-md">
+<div class="relative">
+<img alt="Amara Okafor" class="w-14 h-14 rounded-full object-cover border-2 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpg1tbPI7EwCS_Oh3fb8cLoXskrKuq1LHCejhuV_mCKaMI6sx1PuH4V4Zzmi17QBd2C810JzPyAFsRnszZm2Lq_AZA92Yf2cSIRNz7LJ6G5PCvpS24AOvwfvhtw4xM7BTj_wINj0NZWjOGg4FDBnJA6be1H2ffsVbQtpC7ZvDGqWaQfEmK3bHyfUGzaskuYRPaIYvRQ5UWFNjeq6c4MLwGR64iezFMn-4aX3z5ASK9Tb_ma8ngmtBeLGXobK4IZYxdV4QS4TRKqyfq"/>
+<div class="absolute -bottom-1 -right-1 bg-primary text-white p-0.5 rounded-full">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Amara Okafor</h4>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="bg-primary-container/20 text-on-primary-fixed-variant px-2 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase">Verified Seller</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">• Enugu, Nigeria</span>
+</div>
+</div>
+</div>
+<button class="material-symbols-outlined text-primary bg-white p-2 rounded-full border border-outline-variant">chevron_right</button>
+</section>
+<!-- Availability Calendar (Simplified Micro-UI) -->
+<section class="mt-stack-lg">
+<div class="flex justify-between items-center mb-stack-md">
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Availability</h3>
+<span class="text-primary font-label-md">View full calendar</span>
+</div>
+<div class="bg-white border border-outline-variant rounded-xl p-stack-md">
+<div class="flex justify-between mb-4">
+<span class="font-label-md font-bold">October 2024</span>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant">chevron_left</span>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-2 text-center text-label-sm">
+<div class="text-on-surface-variant">S</div><div class="text-on-surface-variant">M</div><div class="text-on-surface-variant">T</div><div class="text-on-surface-variant">W</div><div class="text-on-surface-variant">T</div><div class="text-on-surface-variant">F</div><div class="text-on-surface-variant">S</div>
+<!-- Simplified Calendar View -->
+<div class="py-2 text-on-surface-variant opacity-30">28</div>
+<div class="py-2 text-on-surface-variant opacity-30">29</div>
+<div class="py-2 text-on-surface-variant opacity-30">30</div>
+<div class="py-2 font-bold bg-primary text-white rounded-lg">1</div>
+<div class="py-2 font-bold bg-primary-container text-on-primary-container rounded-lg">2</div>
+<div class="py-2 font-bold bg-primary-container text-on-primary-container rounded-lg">3</div>
+<div class="py-2 font-bold">4</div>
+<div class="py-2 font-bold">5</div>
+<div class="py-2 font-bold bg-error-container text-on-error-container rounded-lg">6</div>
+<div class="py-2 font-bold bg-error-container text-on-error-container rounded-lg">7</div>
+<div class="py-2 font-bold">8</div>
+<div class="py-2 font-bold">9</div>
+<div class="py-2 font-bold">10</div>
+<div class="py-2 font-bold">11</div>
+</div>
+<div class="mt-4 flex gap-4">
+<div class="flex items-center gap-1.5 text-label-sm">
+<div class="w-3 h-3 bg-primary rounded-full"></div> Available
+                    </div>
+<div class="flex items-center gap-1.5 text-label-sm">
+<div class="w-3 h-3 bg-error-container rounded-full"></div> Booked
+                    </div>
+</div>
+</div>
+</section>
+<!-- Ratings Section -->
+<section class="mt-stack-lg border-t border-outline-variant pt-stack-lg">
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface mb-stack-md">Ratings &amp; Reviews</h3>
+<div class="flex items-center gap-4 mb-stack-md">
+<div class="text-center">
+<p class="text-display-lg font-display-lg text-primary leading-none">4.9</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-1">out of 5</p>
+</div>
+<div class="flex-1 space-y-1">
+<div class="flex items-center gap-2">
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[95%]"></div>
+</div>
+<span class="text-label-sm w-4">5</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[5%]"></div>
+</div>
+<span class="text-label-sm w-4">4</span>
+</div>
+<div class="flex items-center gap-2 opacity-30">
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary w-0"></div>
+</div>
+<span class="text-label-sm w-4">3</span>
+</div>
+</div>
+</div>
+<!-- Single Review Example -->
+<div class="space-y-stack-md">
+<div class="bg-white p-4 rounded-xl border border-outline-variant">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-2">
+<img alt="Reviewer" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB3o7ZoNaKC6EYXh58qlO-KOt-HX1-eRAyHvicqTroycMNDPVKLzaIHdhNUkdsshvXj3qcWGrdgzo3Q0Ua9-4UEL4DYVQHrE6BpIxER2PKK3S4OwptfzVx_XQlLV8mvTNk2-HgCA3Z6Os4upLX328FdtARsuFue0a42C1s1AgtBEEZuwHmtowTK5D9kxtEGWGW-Ie7WdmMD1cbFszQ7_pJdIV4F4ypmNju-hzwkLtk6zI_uS1WmiNbaVHZeacJBulTLy6xMhnR2RsD"/>
+<div>
+<p class="font-label-md text-label-md font-bold">Chidi O.</p>
+<p class="text-[10px] text-on-surface-variant">2 weeks ago</p>
+</div>
+</div>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-body-md text-body-md mt-2 text-on-surface-variant italic">"This tractor is in excellent condition. Worked flawlessly for 3 days on my maize farm. Amara was very professional."</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar (Contextual Task-Focused) -->
+<div class="fixed bottom-0 left-0 w-full bg-white border-t border-outline-variant p-margin-mobile flex gap-4 z-50">
+<button class="flex-1 bg-surface-container-high text-primary font-bold py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-secondary-container transition-colors active:scale-95">
+<span class="material-symbols-outlined">chat</span>
+            Message
+        </button>
+<button class="flex-[1.5] bg-primary text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 hover:opacity-90 transition-all active:scale-95 shadow-lg">
+<span class="material-symbols-outlined">shopping_cart</span>
+            Book Now
+        </button>
+</div>
+<script>
+        // Micro-interaction for gallery transitions
+        const thumbnails = document.querySelectorAll('.min-w-\\[80px\\]');
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', () => {
+                thumbnails.forEach(t => t.classList.replace('border-primary', 'border-outline-variant'));
+                thumb.classList.replace('border-outline-variant', 'border-primary');
+                // Normally we'd swap the main image here
+            });
+        });
+
+        // Subtle parallax effect on scroll for the hero image
+        window.addEventListener('scroll', () => {
+            const scroll = window.pageYOffset;
+            const hero = document.querySelector('section img');
+            if(hero) {
+                hero.style.transform = `translateY(${scroll * 0.1}px)`;
+            }
+        });
+    </script>
+</body></html>

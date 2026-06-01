@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login - AgriGrow</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700&amp;family=Work+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "on-tertiary-container": "#c5c2c2",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#2d5a27",
+                    "on-surface-variant": "#42493e",
+                    "tertiary": "#3a3939",
+                    "secondary-container": "#e1e1c9",
+                    "error": "#ba1a1a",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-container-low": "#f3f3f3",
+                    "primary-fixed-dim": "#a1d494",
+                    "on-secondary-container": "#636451",
+                    "inverse-surface": "#2f3131",
+                    "tertiary-container": "#515050",
+                    "surface-bright": "#f9f9f9",
+                    "secondary": "#5e604d",
+                    "surface-variant": "#e2e2e2",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#002201",
+                    "outline-variant": "#c2c9bb",
+                    "tertiary-fixed": "#e5e2e1",
+                    "surface-dim": "#dadada",
+                    "surface-container-high": "#e8e8e8",
+                    "on-primary-fixed-variant": "#23501e",
+                    "on-background": "#1a1c1c",
+                    "outline": "#72796e",
+                    "on-primary-container": "#9dd090",
+                    "primary": "#154212",
+                    "surface-tint": "#3b6934",
+                    "secondary-fixed-dim": "#c8c8b0",
+                    "inverse-primary": "#a1d494",
+                    "on-error-container": "#93000a",
+                    "surface": "#f9f9f9",
+                    "on-secondary": "#ffffff",
+                    "on-surface": "#1a1c1c",
+                    "on-tertiary-fixed": "#1b1b1b",
+                    "surface-container": "#eeeeee",
+                    "primary-fixed": "#bcf0ae",
+                    "on-secondary-fixed-variant": "#474836",
+                    "secondary-fixed": "#e4e4cc",
+                    "on-secondary-fixed": "#1b1d0e",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "background": "#f9f9f9",
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#c8c6c5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "32px",
+                    "stack-md": "16px",
+                    "unit": "8px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "gutter": "16px",
+                    "stack-lg": "24px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "label-md": ["Work Sans"],
+                    "label-sm": ["Work Sans"],
+                    "body-md": ["Work Sans"],
+                    "headline-md": ["Be Vietnam Pro"],
+                    "display-lg": ["Be Vietnam Pro"],
+                    "headline-lg": ["Be Vietnam Pro"],
+                    "headline-lg-mobile": ["Be Vietnam Pro"],
+                    "body-lg": ["Work Sans"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.auth-card-shadow {
+    box-shadow: 0 4px 12px rgba(28, 28, 28, 0.05)
+    }
+.grain-overlay {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuD6mIlt4w1Kp4u0canNnTObobfaQLSsu4Cqxv_uoEAMnFNI8ej9d06krh3P9M6bD37Asi3x4GOXXre2HCK3uoge62h2wXN4924mm1Ao1Z92_c9PydV423LuHQTeNiwD4n-zslDEq9hDsP3JEO7OC1QzKt_2eDKHvaPHOxwYNefx2K4VMe32AxI3jd6pcnH-cJ-KrdfnctW_8Qrr_KNMyYxWRpRhTu4Lv5jU1QjIKrhg3Wk_VEsPP369X-9Kyh5jdapVqK66bfTn70ae);
+    opacity: 0.03;
+    pointer-events: none
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col items-center justify-center relative overflow-x-hidden">
+<div class="absolute inset-0 grain-overlay"></div>
+<!-- Main Content Canvas -->
+<main class="w-full max-w-container-max mx-auto flex flex-col md:flex-row items-center justify-center min-h-screen px-margin-mobile md:px-margin-desktop py-stack-lg gap-12 lg:gap-24">
+<!-- Branding Section (Visual Anchor) -->
+<div class="hidden md:flex flex-col items-start max-w-md animate-fade-in">
+<div class="flex items-center gap-stack-sm mb-stack-lg">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="agriculture">agriculture</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">AgriGrow</h1>
+</div>
+<h2 class="font-display-lg text-display-lg text-primary mb-stack-md leading-tight">Digital tools for real-world growth.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg">Supporting African farmers and distributors with a modern, secure marketplace for agricultural excellence.</p>
+<div class="w-full aspect-video rounded-xl overflow-hidden auth-card-shadow bg-surface-container border border-outline-variant">
+<img alt="Agricultural landscape" class="w-full h-full object-cover" data-alt="A wide-angle, cinematic photograph of a vibrant green agricultural landscape in sub-Saharan Africa during the golden hour. The soft, warm sunlight bathes neat rows of healthy crops, while a group of modern silos stands elegantly in the background under a clear sky. The image conveys prosperity, growth, and the intersection of traditional farming with modern digital efficiency. The color palette is rich with deep greens and warm sand beiges, perfectly matching a clean, professional agritech brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhVmVaJXBYhRAWyAYqqUK0NVBHEDQU15k2JAstszl5wk5QVIfVP3Lwp2f_RRCMsUKptPdLYJ_LR1NK3l8eLn9sLgaH1z0O_amVKl8jdm5vStXVWjrgrgXYOU3btdS828WRMHkgAPIIbQ6xA_c-g93yjRb0-34JGXdviW2uwQXKk7foHFGxeIzgvdqKS-rivTGh1TFdmZIWUe3bM9NpLJ0784hqDGq7lym7c0yidi7HehVCP-jsRjTbK2NHIi0RO9BgYcH2Jy0i0CSv"/>
+</div>
+</div>
+<!-- Login Card -->
+<div class="w-full max-w-[440px] bg-white rounded-xl p-8 auth-card-shadow border border-outline-variant relative z-10">
+<!-- Mobile Logo -->
+<div class="md:hidden flex items-center justify-center gap-stack-sm mb-stack-lg">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="agriculture">agriculture</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">AgriGrow</span>
+</div>
+<div class="mb-stack-lg text-center md:text-left">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">Welcome Back</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Log in to manage your farm and listings.</p>
+</div>
+<!-- Tab Switcher (Phone / Email) -->
+<div class="flex p-1 bg-surface-container-low rounded-lg mb-stack-lg border border-outline-variant">
+<button class="flex-1 py-2 font-label-md text-label-md rounded-md transition-all bg-primary-container text-on-primary shadow-sm" id="phone-tab" onclick="switchAuthTab('phone')">
+                    Phone Number
+                </button>
+<button class="flex-1 py-2 font-label-md text-label-md rounded-md transition-all text-on-surface-variant hover:bg-surface-variant" id="email-tab" onclick="switchAuthTab('email')">
+                    Email Address
+                </button>
+</div>
+<!-- Form Container -->
+<form class="space-y-stack-md" id="auth-form" onsubmit="event.preventDefault()">
+<!-- Phone Input Field -->
+<div id="phone-field-group">
+<label class="block font-label-md text-label-md text-on-surface mb-1" for="phone">Mobile Phone Number</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-on-surface-variant">
+<span class="font-label-md text-label-md">+234</span>
+</div>
+<input class="w-full pl-14 pr-4 py-3 bg-white border border-outline rounded-lg focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-on-tertiary-container font-body-md text-body-md" id="phone" name="phone" placeholder="801 234 5678" type="tel"/>
+</div>
+</div>
+<!-- Email Input Field (Hidden by default) -->
+<div class="hidden" id="email-field-group">
+<label class="block font-label-md text-label-md text-on-surface mb-1" for="email">Email Address</label>
+<div class="relative">
+<input class="w-full px-4 py-3 bg-white border border-outline rounded-lg focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-on-tertiary-container font-body-md text-body-md" id="email" name="email" placeholder="farmer@agrigrow.com" type="email"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-1" for="password">Security PIN / Password</label>
+<div class="relative">
+<input class="w-full px-4 py-3 bg-white border border-outline rounded-lg focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all placeholder:text-on-tertiary-container font-body-md text-body-md" id="password" name="password" placeholder="••••••••" type="password"/>
+<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-on-surface-variant" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between mt-2">
+<label class="flex items-center gap-2 cursor-pointer">
+<input class="w-4 h-4 rounded border-outline text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Remember me</span>
+</label>
+<a class="font-label-sm text-label-sm text-primary font-bold hover:underline" href="#">Forgot security?</a>
+</div>
+<button class="w-full py-3 mt-stack-md bg-primary text-on-primary font-label-md text-label-md rounded-lg hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2" type="submit">
+                    Log In
+                    <span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+<!-- Divider -->
+<div class="flex items-center my-stack-lg">
+<div class="flex-grow h-[1px] bg-outline-variant"></div>
+<span class="px-3 font-label-sm text-label-sm text-on-tertiary-container">OR CONTINUE WITH</span>
+<div class="flex-grow h-[1px] bg-outline-variant"></div>
+</div>
+<!-- Social Logins -->
+<div class="grid grid-cols-2 gap-stack-sm">
+<button class="flex items-center justify-center gap-2 py-2.5 border border-outline-variant rounded-lg font-label-md text-label-md text-on-surface hover:bg-surface-container transition-colors">
+<svg class="w-5 h-5" viewbox="0 0 24 24">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.26.81-.58z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+                    Google
+                </button>
+<button class="flex items-center justify-center gap-2 py-2.5 border border-outline-variant rounded-lg font-label-md text-label-md text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-blue-600" data-icon="account_balance_wallet" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+                    M-Pesa
+                </button>
+</div>
+<p class="text-center mt-stack-lg font-body-md text-body-md text-on-surface-variant">
+                Don't have an account? 
+                <a class="text-primary font-bold hover:underline" href="#">Join as a Farmer</a>
+</p>
+</div>
+</main>
+<!-- Simple Footer for Transactional Page -->
+<footer class="w-full py-stack-md mt-auto bg-transparent border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-mobile flex flex-col md:flex-row justify-between items-center gap-4 text-on-surface-variant font-label-sm text-label-sm">
+<span>© 2024 AgriGrow Marketplace. Supporting African Growth.</span>
+<div class="flex gap-stack-md">
+<a class="hover:text-primary transition-colors" href="#">Terms</a>
+<a class="hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="hover:text-primary transition-colors" href="#">Support</a>
+</div>
+</div>
+</footer>
+<!-- Scripts -->
+<script>
+        function switchAuthTab(type) {
+            const phoneTab = document.getElementById('phone-tab');
+            const emailTab = document.getElementById('email-tab');
+            const phoneField = document.getElementById('phone-field-group');
+            const emailField = document.getElementById('email-field-group');
+
+            const activeClasses = ['bg-primary-container', 'text-on-primary', 'shadow-sm'];
+            const inactiveClasses = ['text-on-surface-variant', 'hover:bg-surface-variant'];
+
+            if (type === 'phone') {
+                phoneTab.classList.add(...activeClasses);
+                phoneTab.classList.remove(...inactiveClasses);
+                emailTab.classList.remove(...activeClasses);
+                emailTab.classList.add(...inactiveClasses);
+                
+                phoneField.classList.remove('hidden');
+                emailField.classList.add('hidden');
+            } else {
+                emailTab.classList.add(...activeClasses);
+                emailTab.classList.remove(...inactiveClasses);
+                phoneTab.classList.remove(...activeClasses);
+                phoneTab.classList.add(...inactiveClasses);
+                
+                emailField.classList.remove('hidden');
+                phoneField.classList.add('hidden');
+            }
+        }
+
+        // Add micro-interaction for button press
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', () => btn.classList.add('scale-95'));
+            btn.addEventListener('mouseup', () => btn.classList.remove('scale-95'));
+            btn.addEventListener('mouseleave', () => btn.classList.remove('scale-95'));
+        });
+    </script>
+</body></html>

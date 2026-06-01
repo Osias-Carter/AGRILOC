@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AgriGrow Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&amp;family=Be+Vietnam+Pro:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        body {
+            background-color: #FAFAFA;
+            color: #1a1c1c;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "on-tertiary-container": "#c5c2c2",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#2d5a27",
+                        "on-surface-variant": "#42493e",
+                        "tertiary": "#3a3939",
+                        "secondary-container": "#e1e1c9",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-container-low": "#f3f3f3",
+                        "primary-fixed-dim": "#a1d494",
+                        "on-secondary-container": "#636451",
+                        "inverse-surface": "#2f3131",
+                        "tertiary-container": "#515050",
+                        "surface-bright": "#f9f9f9",
+                        "secondary": "#5e604d",
+                        "surface-variant": "#e2e2e2",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#002201",
+                        "outline-variant": "#c2c9bb",
+                        "tertiary-fixed": "#e5e2e1",
+                        "surface-dim": "#dadada",
+                        "surface-container-high": "#e8e8e8",
+                        "on-primary-fixed-variant": "#23501e",
+                        "on-background": "#1a1c1c",
+                        "outline": "#72796e",
+                        "on-primary-container": "#9dd090",
+                        "primary": "#154212",
+                        "surface-tint": "#3b6934",
+                        "secondary-fixed-dim": "#c8c8b0",
+                        "inverse-primary": "#a1d494",
+                        "on-error-container": "#93000a",
+                        "surface": "#f9f9f9",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "surface-container": "#eeeeee",
+                        "primary-fixed": "#bcf0ae",
+                        "on-secondary-fixed-variant": "#474836",
+                        "secondary-fixed": "#e4e4cc",
+                        "on-secondary-fixed": "#1b1d0e",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "background": "#f9f9f9",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#c8c6c5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "32px",
+                        "stack-md": "16px",
+                        "unit": "8px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "gutter": "16px",
+                        "stack-lg": "24px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Work Sans"],
+                        "label-sm": ["Work Sans"],
+                        "body-md": ["Work Sans"],
+                        "headline-md": ["Be Vietnam Pro"],
+                        "display-lg": ["Be Vietnam Pro"],
+                        "headline-lg": ["Be Vietnam Pro"],
+                        "headline-lg-mobile": ["Be Vietnam Pro"],
+                        "body-lg": ["Work Sans"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 z-50 w-full bg-surface border-b border-outline-variant">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-16">
+<div class="flex items-center gap-stack-sm">
+<span class="material-symbols-outlined text-primary" data-icon="agriculture">agriculture</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">AgriGrow</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-surface-container-low transition-colors rounded-full text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-16 pb-24 md:pb-8 max-w-container-max mx-auto">
+<!-- Search Anchor Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-stack-lg">
+<div class="relative w-full max-w-2xl mx-auto">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="search">search</span>
+</div>
+<input class="w-full pl-12 pr-4 py-4 bg-white border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all shadow-sm font-body-md" placeholder="Search for tractors, tools, or harvesters..." type="text"/>
+<div class="absolute inset-y-0 right-4 flex items-center">
+<button class="p-1 hover:bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="tune">tune</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Categories Horizontal Scroll -->
+<section class="mb-stack-lg">
+<div class="flex overflow-x-auto hide-scrollbar gap-stack-md px-margin-mobile md:px-margin-desktop">
+<button class="flex flex-col items-center gap-2 flex-shrink-0 group">
+<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[28px]" data-icon="agriculture">agriculture</span>
+</div>
+<span class="font-label-md text-label-md text-primary font-bold">Tractors</span>
+</button>
+<button class="flex flex-col items-center gap-2 flex-shrink-0 group">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-[28px]" data-icon="water_drop">water_drop</span>
+</div>
+<span class="font-label-md text-label-md">Irrigation</span>
+</button>
+<button class="flex flex-col items-center gap-2 flex-shrink-0 group">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-[28px]" data-icon="grass">grass</span>
+</div>
+<span class="font-label-md text-label-md">Harvesting</span>
+</button>
+<button class="flex flex-col items-center gap-2 flex-shrink-0 group">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-[28px]" data-icon="handyman">handyman</span>
+</div>
+<span class="font-label-md text-label-md">Tools</span>
+</button>
+<button class="flex flex-col items-center gap-2 flex-shrink-0 group">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-[28px]" data-icon="precision_manufacturing">precision_manufacturing</span>
+</div>
+<span class="font-label-md text-label-md">Parts</span>
+</button>
+<button class="flex flex-col items-center gap-2 flex-shrink-0 group">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant group-hover:bg-secondary-container transition-colors">
+<span class="material-symbols-outlined text-[28px]" data-icon="local_shipping">local_shipping</span>
+</div>
+<span class="font-label-md text-label-md">Logistics</span>
+</button>
+</div>
+</section>
+<!-- Featured Section (Bento Style) -->
+<section class="px-margin-mobile md:px-margin-desktop mb-stack-lg">
+<h2 class="font-headline-md text-headline-md mb-stack-md">Featured Equipment</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="md:col-span-2 relative overflow-hidden rounded-xl bg-primary min-h-[280px] group">
+<img alt="Featured Tractor" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" data-alt="A powerful modern green tractor working in a vast, vibrant sun-drenched field in rural Nigeria. The lighting is warm and golden, emphasizing the professional-grade agricultural machinery. The style is crisp and high-contrast, representing high-end agricultural technology and growth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqub-NI9RL9ve3DziVkLhVnrvt28LBn6Z5paCjFnQ7Tq0lNkBTDO78AESHSaIQWENFnT25j5Ugm0iGYQ3OGNemiJ0wu9QQ3nhuXzIzsbXjJDWySgym_FTkFdH7FJSZsGqXDVdZoL0OwxLrSt2v_sYpOSVqQhVSqHlA9O5l_XGhNMw4IrF-Y_jpHy8kTVSwrKEtKXZR9-C_uUZ0aPd_paWCTFoBtbMYN65nL5sGsLTYZ8xRNE98ajIW1oPdGrPEM9j4S3dnJDoLnflo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-stack-lg text-white">
+<span class="bg-secondary text-on-secondary px-3 py-1 rounded-full text-label-sm font-label-sm mb-2 inline-block">Flash Deal</span>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-1">John Deere 5075E 4WD</h3>
+<p class="font-body-md opacity-90 mb-4">Optimized for small and medium scale commercial farming.</p>
+<button class="bg-white text-primary px-6 py-2 rounded-lg font-label-md hover:bg-surface-variant transition-colors">View Details</button>
+</div>
+</div>
+<div class="bg-secondary-container rounded-xl p-stack-lg flex flex-col justify-between border border-outline-variant">
+<div>
+<span class="material-symbols-outlined text-primary text-4xl mb-stack-md" data-icon="verified">verified</span>
+<h4 class="font-headline-md text-headline-md leading-tight mb-2">Verified Sellers Only</h4>
+<p class="font-body-md text-on-secondary-container">Every piece of equipment on AgriGrow undergoes a 24-point inspection by our regional experts.</p>
+</div>
+<button class="text-primary font-bold flex items-center gap-2 mt-4">
+                        Learn more <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Main Marketplace Feed -->
+<section class="px-margin-mobile md:px-margin-desktop">
+<div class="flex justify-between items-center mb-stack-md">
+<h2 class="font-headline-md text-headline-md">Recent Listings</h2>
+<button class="text-primary font-bold text-label-md">See all</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden hover:shadow-md transition-shadow group">
+<div class="relative h-40 md:h-48">
+<img alt="Tractor" class="w-full h-full object-cover" data-alt="A clean, professionally photographed close-up of a high-end agricultural harvester in a brightly lit, clean showroom setting. The lighting is soft and neutral, highlighting the mechanical precision and clean red finish of the machine. Professional marketplace aesthetic with high clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHEF9hRV4Zg14nVc2HEcO-EF8QKE02X9Ov2F03iM3qUYhnSAn33zkbVygM7zQYZ-c2-jN_-FqERspDSHvGXFB1eHxAn9l2nvXlBtcyRYI_wISfqj_vTqhmhbmfKJ5J0OKbpcdRUXHFqWlA7x6vIWNpeUA0Jsk5Mm0oskHh5bRi2cjnBwH_8fg2Xpk71IXv5_jUL0XmJP0Q9unCThtf2dy70gWW9zRPYYcIOvK7yC8cYQWQOew3wPH7jXtPJibBIW3Y_v6qHxesE8dk"/>
+<div class="absolute top-2 right-2">
+<span class="bg-white/90 backdrop-blur-sm text-primary p-1.5 rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+</div>
+<div class="p-3">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-label-md text-label-md text-on-surface truncate pr-2">Mahindra Jivo 225</h3>
+<button class="text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant mb-2">
+<span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span>
+<span class="text-label-sm font-label-sm truncate">Kaduna, NG</span>
+</div>
+<p class="font-headline-md text-headline-md text-primary">₦4.2M</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden hover:shadow-md transition-shadow group">
+<div class="relative h-40 md:h-48">
+<img alt="Irrigation" class="w-full h-full object-cover" data-alt="Modern high-tech center pivot irrigation system spraying water across a lush green field during a clear blue afternoon. The atmosphere is refreshing and indicates successful growth and sustainable farming. The colors are dominated by bright greens and sky blues, with soft natural light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLPSoSLXNVt1mLYDkOcStTmnLlHlQDGflCrv_dqbzulukAYq_Z1kdy2tYtbLCYuKm_3EguUACC_qQxDJeGq94PZ-sRv91-jB2IRSHHjz5gytbnTWtnm2HroSnqvLtLDu-kuM_KVbBWSpoJaQz_4onsK26OzE2j5sLl07v05yCu3VADGY0aGvVMAdyXXM7qVXmyKXHIBys-wEx6PCYAjNUnyz1WCYbyMg6iJlt0kl8M_FDD_bBJIV-TuiOMowtgdHIcjtQmmTQAcHG0"/>
+<div class="absolute top-2 right-2">
+<span class="bg-white/90 backdrop-blur-sm text-primary p-1.5 rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+</div>
+<div class="p-3">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-label-md text-label-md text-on-surface truncate pr-2">Solar Drip Kit Pro</h3>
+<button class="text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant mb-2">
+<span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span>
+<span class="text-label-sm font-label-sm truncate">Enugu, NG</span>
+</div>
+<p class="font-headline-md text-headline-md text-primary">₦850k</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden hover:shadow-md transition-shadow group">
+<div class="relative h-40 md:h-48">
+<img alt="Harvesting" class="w-full h-full object-cover" data-alt="A commercial scale grain harvester sitting in a field of golden wheat under a dramatic late afternoon sky. The lighting is dramatic and rich, highlighting the yellow tones of the crop and the sturdy build of the machine. The image conveys abundance and industrial-strength farming capability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgrrDazQ3foq8SQfVQOwuMw6d3Qo712VVHv1Rw5NkHfy8SLJKQtSXPynuPWLRBYsHYm1sVmb_NaSzY7ICUGhKb_bxsNQgcA_2uiY3Snq25LqkLpW0oAVE6C8ug_rjbRDsb2jPufBsOkghrynYLh5HjY0yXEyjCthPKfmgDVb4Wy45aoTfQNqKfqQbI_7PxknKb7ZocPVhNoWJ5SnENK7MEj7REdnk4KhlTnMQ7XwaqozGf0wSyrw5A8QVUVyiz8giVG3XQnaONBGL6"/>
+</div>
+<div class="p-3">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-label-md text-label-md text-on-surface truncate pr-2">Kubota DC-70 Plus</h3>
+<button class="text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant mb-2">
+<span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span>
+<span class="text-label-sm font-label-sm truncate">Kano, NG</span>
+</div>
+<p class="font-headline-md text-headline-md text-primary">₦12.5M</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden hover:shadow-md transition-shadow group">
+<div class="relative h-40 md:h-48">
+<img alt="Tillage" class="w-full h-full object-cover" data-alt="A professional heavy-duty iron plow and soil cultivator attachment resting on dry earth. The lighting is hard and direct, accentuating the metallic texture and heavy-duty craftsmanship of the tool. The style is rugged yet high-end, representing durability and essential soil preparation tools for farmers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtACfQ0IC8peDcK-V_kT0RzHYkqkrUqMMzi8l8mTKr2_3QoSs4xLEPXQfyr-o3_Jh9-qxotB4DqMRFvRkEP3_C_IbsRG-P76pq69crOng9pwikrJ4ZeC4Js4gKVL8bOHCne5c-AnFQ0PfdsQyjHADyNoF_qdjW21QDS_rg-NAt57Cnjwly4A9UHWJPnsP4ZsQUldPD_wSkKx0SdggcZlBpFAu03TAYPVudS1fAwvVIsfeZnZgnXoeFJHpinoUh8kE0Eyi364iwOvr0"/>
+<div class="absolute top-2 right-2">
+<span class="bg-white/90 backdrop-blur-sm text-primary p-1.5 rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+</div>
+<div class="p-3">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-label-md text-label-md text-on-surface truncate pr-2">3-Bottom Disc Plow</h3>
+<button class="text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant mb-2">
+<span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span>
+<span class="text-label-sm font-label-sm truncate">Ibadan, NG</span>
+</div>
+<p class="font-headline-md text-headline-md text-primary">₦1.8M</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center py-2 px-2 bg-surface border-t border-outline-variant z-50 md:hidden">
+<a class="flex flex-col items-center justify-center text-primary bg-secondary-container rounded-full px-4 py-1 scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-sm text-label-sm">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-sm text-label-sm">Bookings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="font-label-sm text-label-sm">Chat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<!-- Floating Action Button - Only for Home/Marketplace context -->
+<button class="fixed bottom-20 right-6 md:bottom-8 md:right-8 bg-primary text-on-primary w-14 h-14 rounded-2xl shadow-lg flex items-center justify-center hover:scale-105 active:scale-95 transition-all z-40">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+<footer class="hidden md:flex flex-col md:flex-row justify-between items-center p-margin-desktop max-w-container-max mx-auto mt-stack-lg bg-tertiary text-on-tertiary">
+<div class="flex flex-col gap-2">
+<span class="font-headline-md text-headline-md font-bold text-on-primary">AgriGrow</span>
+<p class="font-label-sm text-label-sm opacity-80">© 2024 AgriGrow Marketplace. Supporting African Growth.</p>
+</div>
+<div class="flex gap-6 mt-4 md:mt-0">
+<a class="font-label-sm text-label-sm text-on-tertiary-container hover:text-on-tertiary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-container hover:text-on-tertiary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-container hover:text-on-tertiary transition-colors" href="#">Safety Tips</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-container hover:text-on-tertiary transition-colors" href="#">Contact Us</a>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for equipment cards
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Potential for more complex JS animations
+            });
+        });
+
+        // Search bar focus effect
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('scale-[1.01]');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('scale-[1.01]');
+        });
+    </script>
+</body></html>
