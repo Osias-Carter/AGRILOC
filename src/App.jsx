@@ -558,56 +558,6 @@ export default function App() {
       {/* 5. FOOTER */}
       <Footer setActivePage={setActivePage} />
 
-      {/* ==================================================== */}
-      {/* 6. FLOATING DEMO CONTROLLER TOOLBAR FOR INVESTORS    */}
-      {/* ==================================================== */}
-      <div className="fixed bottom-6 left-6 z-40 bg-white/90 backdrop-blur border border-gray-200 shadow-2xl p-4 rounded-3xl max-w-sm hidden sm:flex items-center space-x-4 animate-fade-in hover:shadow-agri-green/10 transition-shadow">
-        <div className="p-2 bg-gradient-to-br from-agri-green to-agri-light rounded-xl text-white">
-          <Eye className="h-5 w-5" />
-        </div>
-        <div className="text-left">
-          <div className="flex items-center space-x-1">
-            <span className="text-[9px] bg-agri-green/10 text-agri-green font-bold px-2 py-0.5 rounded uppercase">Démo Interactive</span>
-            <span className="h-1.5 w-1.5 rounded-full bg-agri-light animate-ping"></span>
-          </div>
-          <h4 className="text-[11px] font-bold text-gray-800 font-outfit mt-0.5">Simulateur de rôle AGRILOC</h4>
-          <p className="text-[9px] text-gray-400 font-light mt-0.5 leading-tight">Basculez de rôle pour tester le flux de réservation en temps réel.</p>
-          
-          <div className="flex gap-2 mt-2">
-            <button 
-              onClick={() => {
-                setRole('farmer');
-                setActivePage('farmer');
-                showToast("Bascule en mode Agriculteur (Koffi)", "info");
-              }}
-              className={`flex-1 py-1 rounded-lg text-[9px] font-bold flex items-center justify-center border transition-all ${
-                role === 'farmer' 
-                  ? 'bg-agri-light border-transparent text-white shadow-sm'
-                  : 'bg-white border-gray-200 text-gray-600 hover:bg-gray-50'
-              }`}
-            >
-              <User className="h-3 w-3 mr-1" />
-              Agriculteur
-            </button>
-            <button 
-              onClick={() => {
-                setRole('supplier');
-                setActivePage('supplier');
-                showToast("Bascule en mode Fournisseur (AgriTech)", "info");
-              }}
-              className={`flex-1 py-1 rounded-lg text-[9px] font-bold flex items-center justify-center border transition-all ${
-                role === 'supplier' 
-                  ? 'bg-agri-dark border-transparent text-white shadow-sm'
-                  : 'bg-white border-gray-200 text-gray-600 hover:bg-gray-50'
-              }`}
-            >
-              <Briefcase className="h-3 w-3 mr-1" />
-              Fournisseur
-            </button>
-          </div>
-        </div>
-      </div>
-
     </div>
   );
 }

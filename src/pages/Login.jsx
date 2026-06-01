@@ -3,8 +3,8 @@ import { Lock, UserRound, Briefcase, ShieldCheck, Mail, Phone, MapPin, Building2
 import { api } from '../api';
 
 const fallbackAccounts = [
-  { role: 'farmer', name: 'Koffi Kouma', email: 'koffi@agriloc.test', password: 'password123', city: 'Atakpamé', region: 'Plateaux' },
-  { role: 'supplier', name: 'AgriTech Togo S.A.', email: 'supplier@agriloc.test', password: 'password123', city: 'Lomé', region: 'Maritime' },
+  { role: 'farmer', name: 'Koffi Kouma', email: 'koffi@agriloc.test', password: '00000000', city: 'Atakpamé', region: 'Plateaux' },
+  { role: 'supplier', name: 'AgriTech Togo S.A.', email: 'supplier@agriloc.test', password: '00000000', city: 'Lomé', region: 'Maritime' },
   { role: 'admin', name: 'Admin AGRILOC', email: 'admin@agriloc.test', password: 'admin123', city: 'Lomé', region: 'Maritime' }
 ];
 

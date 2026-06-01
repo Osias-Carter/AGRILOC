@@ -28,10 +28,10 @@ Si `mysql` n'est pas dans le PATH Windows, lance le fichier `database/schema.sql
 
 | Rôle | Email | Mot de passe |
 | --- | --- | --- |
-| Agriculteur | `koffi@agriloc.test` | `password123` |
-| Agricultrice | `afi@agriloc.test` | `password123` |
-| Fournisseur | `supplier@agriloc.test` | `password123` |
-| Fournisseur | `savane@agriloc.test` | `password123` |
+| Agriculteur | `koffi@agriloc.test` | `00000000` |
+| Agricultrice | `afi@agriloc.test` | `00000000` |
+| Fournisseur | `supplier@agriloc.test` | `00000000` |
+| Fournisseur | `savane@agriloc.test` | `00000000` |
 | Admin | `admin@agriloc.test` | `admin123` |
 
 La base contient 10 machines, plusieurs réservations, des paiements de test et des notifications.

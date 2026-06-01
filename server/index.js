@@ -162,7 +162,7 @@ app.get('/api/test-accounts', async (_req, res, next) => {
       name: row.full_name,
       companyName: row.company_name,
       email: row.email,
-      password: row.role === 'admin' ? 'admin123' : 'password123',
+      password: row.role === 'admin' ? 'admin123' : '00000000',
       city: row.city,
       region: row.region
     })));
