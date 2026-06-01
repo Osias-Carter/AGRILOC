@@ -407,5 +407,5 @@ app.use((error, _req, res, _next) => {
 });
 
 app.listen(port, () => {
-  console.log(`AGRILOC API ready on http://127.0.0.1:${port}`);
+  console.log(`AGRILOC API ready on http://0.0.0.0:${port}`);
 });
