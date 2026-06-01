@@ -3,8 +3,10 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import mysql from 'mysql2/promise';
 import { pool, assertDatabaseReady } from './db.js';
 import { mapBooking, mapMachine, mapNotification, mapUser } from './mappers.js';
 
@@ -389,6 +391,68 @@ function bookingSelectSql(order = 'ORDER BY b.created_at DESC, b.id DESC') {
     ${order}
   `;
 }
+
+app.post('/api/init-db', async (_req, res, next) => {
+  try {
+    // Check if tables already exist to avoid re-running the schema unnecessarily
+    const [tables] = await pool.query(
+      `SELECT COUNT(*) AS cnt FROM information_schema.tables
+       WHERE table_schema = DATABASE() AND table_name = 'users'`
+    );
+    const alreadyExists = tables[0].cnt > 0;
+
+    if (alreadyExists) {
+      const [userRows] = await pool.query('SELECT COUNT(*) AS cnt FROM users');
+      if (userRows[0].cnt > 0) {
+        return res.json({
+          ok: true,
+          message: 'Database already initialised — tables and test data are present.',
+          alreadyExisted: true,
+          testAccounts: [
+            { email: 'koffi@agriloc.test',    password: 'password123', role: 'farmer'   },
+            { email: 'afi@agriloc.test',       password: 'password123', role: 'farmer'   },
+            { email: 'supplier@agriloc.test',  password: 'password123', role: 'supplier' },
+            { email: 'savane@agriloc.test',    password: 'password123', role: 'supplier' },
+            { email: 'admin@agriloc.test',     password: 'admin123',    role: 'admin'    }
+          ]
+        });
+      }
+    }
+
+    // Read and execute the schema file using a dedicated connection with multipleStatements
+    const schemaPath = path.resolve(__dirname, '../database/schema.sql');
+    const sql = fs.readFileSync(schemaPath, 'utf8');
+
+    const connection = await mysql.createConnection({
+      host: process.env.DB_HOST || '127.0.0.1',
+      port: Number(process.env.DB_PORT || 3306),
+      user: process.env.DB_USER || 'root',
+      password: process.env.DB_PASSWORD || '',
+      multipleStatements: true
+    });
+
+    try {
+      await connection.query(sql);
+    } finally {
+      await connection.end();
+    }
+
+    res.json({
+      ok: true,
+      message: 'Database initialised successfully. All tables created and test data inserted.',
+      alreadyExisted: false,
+      testAccounts: [
+        { email: 'koffi@agriloc.test',    password: 'password123', role: 'farmer'   },
+        { email: 'afi@agriloc.test',       password: 'password123', role: 'farmer'   },
+        { email: 'supplier@agriloc.test',  password: 'password123', role: 'supplier' },
+        { email: 'savane@agriloc.test',    password: 'password123', role: 'supplier' },
+        { email: 'admin@agriloc.test',     password: 'admin123',    role: 'admin'    }
+      ]
+    });
+  } catch (error) {
+    next(error);
+  }
+});
 
 // Serve static assets from the React build
 app.use(express.static(path.join(__dirname, '../dist')));
