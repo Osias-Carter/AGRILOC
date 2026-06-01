@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "node server/index.js",
+    "build": "vite build",
     "dev": "vite",
     "dev:api": "node server/index.js",
     "db:init": "node server/init-db.js",
